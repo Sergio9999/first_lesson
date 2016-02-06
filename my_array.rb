@@ -5,59 +5,122 @@ class MyArray
     @array = arr
   end
 
-  def size
+  def size(arr)
+    arrSize = "#{arr.length}"
+    arrSize
     # TODO
   end
 
-  def reverse
+  def reverse(arr)
+    arrReverse = arr.sort_by{|elem| elem.size}.reverse
+    arrReverse
+  end
+
+  def max(arr)
+    arrMax = arr.max
+    arrMax
     # TODO
   end
 
-  def max
+  def min(arr)
     # TODO
+    arrMin = arr.min
+    arrMin
   end
 
-  def min
-    # TODO
+  def desc(arr)
+    arrDesc = arr.sort{|a,b| a<=>b}
+    arrDesc
   end
 
-  def desc
-    # TODO
+  def asc(arr)
+    arrAsc = arr.sort
+    arrAsc
   end
 
-  def asc
-    # TODO
+  def odd(arr)
+    newArr = []
+    i = 0
+    while i < arr.size
+      newArr.push(arr[i]) if arr[i] < 10
+      i+=1
+    end
+
+  newArr
+  end
+  def multiple_to_three(arr)
+     newArr = []
+     i = 0
+     while i < arr.size   
+        newArr.push(arr[i]) if arr[i] % 3 == 0
+        i+=1
+     end
+newArr
+     # TODO
   end
 
-  def odd
-    # TODO
+  def uniq(arr) # не верно
+    newArr = []
+    i = 0
+    j = 1
+    while i < arr.size
+    #newArr = arr.find_all{|elem| elem % 2 == 0}
+      while j < 10                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+       newArr.push(arr[i]) if arr[i] % j == 0
+        j+=1
+      end
+      i+=1
+      
+    end
+    newArr
   end
 
-  def multiple_to_three
-    # TODO
+  def devide_on_ten(arr)
+    newArr = []
+    i = 0
+    while i < arr.size   
+     newArr.push(arr[i]) if arr[i] % 10 != 0
+     i+=1 
+    end
+     newArr 
   end
 
-  def uniq
-    # TODO
-  end
-
-  def devide_on_ten
-    # TODO
-  end
 
   def chars
-    # TODO
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
   end
 
   def switch
     # TODO
   end
 
-  def before_min
-    # TODO
-  end
+  def before_min(arr)
+    newArr = []
+    i = 0
+    while i<arr.size
+      newArr.push(arr.slice[0..min])      
+      i+=0
+    end
+    newArr
+  end 
 
-  def three_smallest
-    # TODO
+  def three_smallest(arr)
+    newArr = []
+    newArr = arr.sort{|a,b| a<=>b}
+    newArr[0..2]
+
   end
 end
+myArr = MyArray.new
+ print myArr.size([1,2,4,5,7,8,6]) 
+ print myArr.reverse([1,2,4,5,7,8,6]) 
+ print myArr.max([1,2,4,5,7,8,6,14]) 
+ print myArr.min([1,4,8,0])
+ print myArr.desc([1,4,8,0])
+ print myArr.asc([1,12,8,14])
+ print myArr.odd([1,2,9,81,45])
+ print myArr.multiple_to_three([3,4,6,7,9,12,15,2,4])
+ #print myArr.uniq([3,4,6,7,9,12,15,2,4,2520])
+ print myArr.devide_on_ten([1.3,3,4,6,10,11.4,20])
+ print myArr.three_smallest([1,5,3,9,0])
+ print myArr.before_min([5,3,9])

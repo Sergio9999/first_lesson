@@ -59,19 +59,8 @@ newArr
      # TODO
   end
 
-  def uniq(arr) # не верно
-    newArr = []
-    i = 0
-    j = 1
-    while i < arr.size
-    #newArr = arr.find_all{|elem| elem % 2 == 0}
-      while j < 10                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
-       newArr.push(arr[i]) if arr[i] % j == 0
-        j+=1
-      end
-      i+=1
-      
-    end
+  def uniq(arr)
+    newArr = arr.uniq
     newArr
   end
 
@@ -96,11 +85,7 @@ newArr
 
   def before_min(arr)
     newArr = []
-    i = 0
-    while i<arr.size
-      newArr.push(arr.slice[0..min])      
-      i+=0
-    end
+    newArr = arr[0..arr.index(arr.min)]      
     newArr
   end 
 
@@ -120,7 +105,7 @@ myArr = MyArray.new
  print myArr.asc([1,12,8,14])
  print myArr.odd([1,2,9,81,45])
  print myArr.multiple_to_three([3,4,6,7,9,12,15,2,4])
- #print myArr.uniq([3,4,6,7,9,12,15,2,4,2520])
+ print myArr.uniq([3,4,6,7,9,12,15,2,4,2520])
  print myArr.devide_on_ten([1.3,3,4,6,10,11.4,20])
  print myArr.three_smallest([1,5,3,9,0])
  print myArr.before_min([5,3,9])

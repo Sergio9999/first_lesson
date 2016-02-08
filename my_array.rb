@@ -79,14 +79,14 @@ newArr
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
   end
 
-  def switch
-    # TODO
+  def switch(arr)
+    new
+
   end
 
   def before_min(arr)
     newArr = []
     newArr = arr[0..arr.index(arr.min)]      
-    newArr
   end 
 
   def three_smallest(arr)

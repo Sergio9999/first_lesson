@@ -13,10 +13,10 @@ require 'date'
       или #{age * 365 * 60} минут,
       или #{age * 365 * 24 * 60 * 60} секунд"
     end
-    def name(*names)
-    result = 'Hello '
-    names.collect{|item| result += item + " "}
-    result
+    def name
+    print "Введите как Вас зовут"
+    val = gets
+    puts "Hello #{val} "
     end
   end
 

@@ -6,94 +6,66 @@ class MyArray
   end
 
   def size(arr)
-    arrSize = "#{arr.length}"
-    arrSize
+    arr.length
     # TODO
   end
 
   def reverse(arr)
-    arrReverse = arr.sort_by{|elem| elem.size}.reverse
-    arrReverse
+    arr.reverse
   end
 
   def max(arr)
-    arrMax = arr.max
-    arrMax
-    # TODO
+   arr.max
   end
 
   def min(arr)
-    # TODO
-    arrMin = arr.min
-    arrMin
+    arr.min 
   end
 
   def desc(arr)
-    arrDesc = arr.sort{|a,b| a<=>b}
-    arrDesc
+    arr.sort.reverse
+    #arrDesc = arr.sort{|a,b| a<=>b}
   end
 
   def asc(arr)
-    arrAsc = arr.sort
-    arrAsc
+    arr.sort
   end
 
   def odd(arr)
-    newArr = []
-    i = 0
-    while i < arr.size
-      newArr.push(arr[i]) if arr[i] < 10
-      i+=1
-    end
-
-  newArr
+    arr.select(&:odd?)
   end
   def multiple_to_three(arr)
-     newArr = []
-     i = 0
-     while i < arr.size   
-        newArr.push(arr[i]) if arr[i] % 3 == 0
-        i+=1
-     end
-newArr
+      arr.select { |elem| (elem % 3).zero? }
      # TODO
   end
 
   def uniq(arr)
-    newArr = arr.uniq
-    newArr
+    arr.uniq
   end
 
   def devide_on_ten(arr)
-    newArr = []
-    i = 0
-    while i < arr.size   
-     newArr.push(arr[i]) if arr[i] % 10 != 0
-     i+=1 
-    end
-     newArr 
+   newArr = arr.map { |elem| puts elem / 10.0 }
+   newArr
   end
 
 
-  def chars
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+  def chars(arr)
+    ('a'..'z').to_a.values_at(*arr)
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
   end
 
   def switch(arr)
-    new
+    min , max = arr.index(arr.min), arr.index(arr.max)
+    arr[min], arr[max] = arr[max], arr[min]
 
   end
 
   def before_min(arr)
-    newArr = []
-    newArr = arr[0..arr.index(arr.min)]      
+    arr[0..arr.index(arr.min)]      
   end 
 
   def three_smallest(arr)
-    newArr = []
-    newArr = arr.sort{|a,b| a<=>b}
-    newArr[0..2]
-
+    arr.sort.take(3)
   end
 end
 myArr = MyArray.new
@@ -109,3 +81,5 @@ myArr = MyArray.new
  print myArr.devide_on_ten([1.3,3,4,6,10,11.4,20])
  print myArr.three_smallest([1,5,3,9,0])
  print myArr.before_min([5,3,9])
+ print myArr.chars([4,3,9])
+ print myArr.switch([4,3,9])
